@@ -1,29 +1,31 @@
-# Fullstack boilerplate
+# Two Crafty Chicks - Personal Project 1
 
-## Getting Started
+This will be a collection of crafting tables
+that is used for keeping track of what items are keeped.
 
-### From the Github UI
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+## Tables
 
-### From the command line
+### Stamps
+ - keeps the name of stamp and the stamp number
+ - price of stamp shows the type of stamp
+ - shows which catalog and collection it belogs to.
 
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
-```
+### Card Stock
+- name and number of cards
+-size of card
+- shows which catalog and collection it belogs to.
+*** more to come ... ***
 
-You can find the server running on [http://localhost:3000](http://localhost:3000).
 
-## Details
+## User Stories
+1. _As a user, i want to be able to see all the topics on one screen_
+2. _As a user , i want to see all the items from one table on a screen_
+3. _As a user , i want to see a item and all its details_
+4. _As a admin, i want to be able to edit items_
+5. _As a admin , i want to be able to add new items_
+6 ._As a admin i want to be able to delete items_
 
-This repo includes:
-
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Jest and testing library
-* configuration for server-side debugging in VS Code
-* a single client-side test (`client/components/App.test.js`)
+___
+7. _As a user i want to be able to see all the retired items_
+8. _As a user i want to be able to see all the items that are a bundle_
+9. _"" same name_
