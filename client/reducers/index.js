@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import fruits from './fruits'
+import stamps from './stamps'
 
 export default combineReducers({
-  fruits
+  stamps,
 })

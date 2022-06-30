@@ -1,18 +1,18 @@
-import { getFruits } from '../apis/fruits'
+import { getAllStamps } from '../apis/apiClient'
 
-export const SET_FRUITS = 'SET_FRUITS'
+export const SET_STAMPS = 'SET_STAMPS'
 
-export function setFruits(fruits) {
+export function setStamp(stamp) {
   return {
-    type: SET_FRUITS,
-    payload: fruits,
+    type: SET_STAMPS,
+    payload: stamp,
   }
 }
 
-export function fetchFruits() {
+export function fetchStamps() {
   return (dispatch) => {
-    return getFruits().then((fruits) => {
-      dispatch(setFruits(fruits))
+    return getAllStamps().then((stamp) => {
+      dispatch(setStamp(stamp))
       return null
     })
   }
