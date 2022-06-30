@@ -1,0 +1,59 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+}
+body{
+  background-color:darkslateblue;
+  height:100vh;
+  font-size: 18px;
+  color: white;
+}
+table{
+  color: white !important;
+}
+/* Header */
+h1
+{
+  font-family: 'Rock Salt', cursive;
+  font-size: 48px;
+  color: lightcoral;
+}
+h2,h3{
+  font-family: 'Rock Salt', cursive;
+  color: lightcoral;
+}
+
+
+.nav-link{
+  color: white !important;
+}
+
+/* Images */
+img{
+  width: 75%;
+}
+
+/* Buttons */
+.pop{
+ border-color: lightcoral;
+ color: lightcoral;
+}
+.inpop{
+  background-color: lightcoral;
+  border-color: darkslateblue;
+  color: darkslateblue;
+}
+.inpop:hover{
+  background-color: darkslateblue;
+   border-color: lightcoral;
+ color: lightcoral;
+}
+.pop:hover{
+  background-color: lightcoral;
+  border-color: darkslateblue;
+  color: darkslateblue;
+}
+
