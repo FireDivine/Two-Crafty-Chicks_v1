@@ -1,25 +1,35 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 
-import { fetchFruits } from '../actions'
+import { Route, Routes } from 'react-router-dom'
+
+import Header from './Header'
+import Home from './Home'
+import Stamps from './Stamps'
+import Collections from './Collections'
+import EditCollections from './EditCollections'
+import EditStamps from './EditStamps'
 
 function App () {
-  const fruits = useSelector(state => state.fruits)
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchFruits())
-  }, [])
 
   return (
     <>
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
+      <div className='container'>
+       <Header />
+       </div>
+       <div className=' m-2'>
+        
+     
+       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/stamps" element={<Stamps />} />
+          {/* <Route path="/stamps/add" element={<AddStamps />} /> */}
+          <Route path="/stamps/:id" element={<EditStamps />} />
+          <Route path="/collections" element={<Collections />} />
+          {/* <Route path="/collections/add" element={<AddCollections />} /> */}
+          <Route path='/collections/:id' element={<EditCollections/>}/>
+           {/* <Route path='/continent/:name/:code' element={<Country />}/> */}
+        </Routes> 
+        </div>
     </>
   )
 }
