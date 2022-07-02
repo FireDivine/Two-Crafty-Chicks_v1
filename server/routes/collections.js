@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
 })
 router.post('/add', (req, res) => {
   const collection = req.body
-  console.log('routees post', collection, req.body)
+  // console.log('routees post', collection)
   db.addCollection(collection)
     .then((id) => {
       res.redirect('/')
-      console.log('added', collection)
+      console.log('added', id)
     })
     .catch((err) => {
       console.error(err)

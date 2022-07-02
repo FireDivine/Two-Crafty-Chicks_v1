@@ -8,7 +8,7 @@ const CollectionReducer = (state = initialState, action) => {
     case SET_COLLECTIONS:
       return payload
     case ADD_COLLECTION:
-      return [...state, [{ name: action.payload.name }]]
+      return [{ name: action.payload.name }]
     default:
       return state
   }

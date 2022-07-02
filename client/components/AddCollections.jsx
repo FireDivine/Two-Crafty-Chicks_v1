@@ -7,12 +7,12 @@ function AddCollections() {
   }])
   function handleChange(e){
    // console.log(e.target.value)
-SetColName([{
+SetColName({
   name:e.target.value
-}])
+})
   }
-  function handleClick(e){
-    e.preventDefault()
+  function handleClick(){
+    //e.preventDefault()
     //console.log("addpage",colName)
    postCollections(colName)
     

@@ -20,7 +20,7 @@ export function postCol(col) {
 export function fetchCollections() {
   return (dispatch) => {
     return getAllCollections().then((col) => {
-      console.log('col: ', col)
+      //  console.log('col: ', col)
       dispatch(setCol(col))
       return null
     })

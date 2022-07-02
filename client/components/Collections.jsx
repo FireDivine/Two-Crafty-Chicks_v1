@@ -6,7 +6,7 @@ import { useSelector ,useDispatch} from 'react-redux'
 function Collections() {
   const fullCollection = useSelector((state)=>state.Collections)
  // const [collections, setCollections] = useState([])
- console.log(fullCollection)
+ //console.log(fullCollection)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchCollections())
