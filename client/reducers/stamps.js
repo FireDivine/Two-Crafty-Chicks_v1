@@ -1,4 +1,4 @@
-import { SET_STAMPS } from '../actions'
+import { SET_STAMPS } from '../actions/stamps'
 
 const initialState = []
 

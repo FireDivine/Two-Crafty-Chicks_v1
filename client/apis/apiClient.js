@@ -16,3 +16,11 @@ export function getAllStamps() {
       console.error(err)
     })
 }
+export function postCollections(col) {
+  return request
+    .post('/v1/collections/add')
+    .send({ col })
+    .then((res) => {
+      return res.body
+    })
+}

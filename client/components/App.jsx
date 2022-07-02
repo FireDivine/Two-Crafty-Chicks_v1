@@ -8,6 +8,7 @@ import Stamps from './Stamps'
 import Collections from './Collections'
 import EditCollections from './EditCollections'
 import EditStamps from './EditStamps'
+//import AddCollections from './AddCollections'
 
 function App () {
 

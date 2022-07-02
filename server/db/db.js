@@ -8,4 +8,10 @@ function getCollections(db = connection) {
 function getStamps(db = connection) {
   return db('stamps').select()
 }
-module.exports = { getCollections, getStamps }
+function addStamp(post, db = connection) {
+  return db('stamps').insert()
+}
+function addCollection(collection, db = connection) {
+  return db('collections').insert(collection)
+}
+module.exports = { getCollections, getStamps, addStamp, addCollection }

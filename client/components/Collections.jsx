@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { getAllCollections } from '../apis/apiClient'
+import React,{ useEffect } from 'react'
+import { fetchCollections } from '../actions/collections'
 import { Link } from 'react-router-dom'
-function Collections() {
-  const [collections, setCollections] = useState([])
+import { useSelector ,useDispatch} from 'react-redux'
 
+function Collections() {
+  const fullCollection = useSelector((state)=>state.Collections)
+ // const [collections, setCollections] = useState([])
+ console.log(fullCollection)
+  const dispatch = useDispatch()
   useEffect(() => {
-    getAllCollections()
-      .then((col) => {
-        console.log(col)
-        setCollections(col)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    dispatch(fetchCollections())
+     
   }, [])
   return (
     <>
@@ -33,7 +31,7 @@ function Collections() {
             </tr>
           </thead>
           <tbody>
-            {collections.map((col)=>(
+            {fullCollection.map((col)=>(
               <tr key={col.id}>
               <th scope="row">{col.id}</th>
               <td>{col.name}</td>
