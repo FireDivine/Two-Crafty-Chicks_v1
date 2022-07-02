@@ -1,4 +1,4 @@
-import { SET_COLLECTIONS } from '../actions/collections'
+import { SET_COLLECTIONS, ADD_COLLECTION } from '../actions/collections'
 
 const initialState = []
 
@@ -7,8 +7,8 @@ const CollectionReducer = (state = initialState, action) => {
   switch (type) {
     case SET_COLLECTIONS:
       return payload
-    // case ADD_COLLECTION:
-    //   return[... state,[{name:action.payload.name}]]
+    case ADD_COLLECTION:
+      return [...state, [{ name: action.payload.name }]]
     default:
       return state
   }

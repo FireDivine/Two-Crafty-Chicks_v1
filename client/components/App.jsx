@@ -8,7 +8,7 @@ import Stamps from './Stamps'
 import Collections from './Collections'
 import EditCollections from './EditCollections'
 import EditStamps from './EditStamps'
-//import AddCollections from './AddCollections'
+import AddCollections from './AddCollections'
 
 function App () {
 
@@ -26,7 +26,7 @@ function App () {
           {/* <Route path="/stamps/add" element={<AddStamps />} /> */}
           <Route path="/stamps/:id" element={<EditStamps />} />
           <Route path="/collections" element={<Collections />} />
-          {/* <Route path="/collections/add" element={<AddCollections />} /> */}
+          <Route path="/collections/add" element={<AddCollections />} />
           <Route path='/collections/:id' element={<EditCollections/>}/>
            {/* <Route path='/continent/:name/:code' element={<Country />}/> */}
         </Routes> 

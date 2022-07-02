@@ -19,8 +19,9 @@ export function getAllStamps() {
 export function postCollections(col) {
   return request
     .post('/v1/collections/add')
-    .send({ col })
+    .send(col)
     .then((res) => {
+      //  console.log('postapi: ', res.body, col)
       return res.body
     })
 }

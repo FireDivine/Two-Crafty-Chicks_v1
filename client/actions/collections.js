@@ -10,9 +10,10 @@ export function setCol(col) {
   }
 }
 export function postCol(col) {
+  // console.log('post:', col)
   return {
     type: ADD_COLLECTION,
-    payload: { name: col },
+    payload: [{ name: col }],
   }
 }
 
