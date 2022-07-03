@@ -9,7 +9,7 @@ function Nav() {
         <li className="nav-item"><Link to={'/cards'}  className="nav-link active">Card Stock</Link></li>
         <li className="nav-item"><Link to={'/collections'}  className="nav-link">Collections</Link></li>
         <li className="nav-item"><a href="/details.html" className="nav-link">Catalog</a></li>
-        <li className="nav-item"><a href="/details.html" className="nav-link">Six</a></li>
+        {/* <li className="nav-item"><a href="/details.html" className="nav-link">Six</a></li> */}
       </ul>
   )
 }

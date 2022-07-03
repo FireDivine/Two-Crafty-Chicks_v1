@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, } from 'react'
+import  {useNavigate} from 'react-router-dom'
 import { postCollections } from '../apis/apiClient'
 
 function AddCollections() {
-  const [colName,SetColName]=useState([{
-    name:''
-  }])
+  const navigate = useNavigate()
+  const [colName,SetColName]=useState([])
   function handleChange(e){
    // console.log(e.target.value)
 SetColName({
   name:e.target.value
 })
   }
-  function handleClick(){
-    //e.preventDefault()
-    //console.log("addpage",colName)
-   postCollections(colName)
+  function handleClick(e){
+    e.preventDefault() //HERE//
+    // console.log("addpage",colName)
+    navigate('/collections')
+    postCollections(colName)
     
   }
   return (

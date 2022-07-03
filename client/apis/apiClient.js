@@ -21,7 +21,7 @@ export function postCollections(col) {
     .post('/v1/collections/add')
     .send(col)
     .then((res) => {
-      //  console.log('postapi: ', res.body, col)
+      // console.log('postapi: ', res.body, col)
       return res.body
     })
 }
