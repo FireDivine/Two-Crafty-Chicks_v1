@@ -20,6 +20,7 @@ SetColName({
   }
   return (
     <div className="container  col-xxl-8 px-4 py-5 w-50">
+      <h2 className='text-center'>-- Add New Collection --</h2>
       <div className="row flex-lg-row align-items-center g-5 py-5">
       <form onSubmit={handleClick} action="/v1/collections/add" method="post">
         <label className="pt-3" htmlFor="name">Name of New Collection</label>

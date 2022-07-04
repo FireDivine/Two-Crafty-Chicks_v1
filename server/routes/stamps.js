@@ -21,14 +21,14 @@ router.get('/types', (req, res) => {
 })
 router.post('/add', (req, res) => {
   const stamp = req.body
-  //console.log('bob', stamp)
+  console.log('bob', stamp)
   db.addStamp(stamp)
-  // .then((id) => {
-  //   //console.log('add stamp:', stamp, id)
-  //   //res.json(id)
-  //   //res.redirect('/stamps')
-  // })
-  // .catch((err) => console.error(err))
+    .then((id) => {
+      //   //console.log('add stamp:', stamp, id)
+      //   //res.json(id)
+      //   //res.redirect('/stamps')
+    })
+    .catch((err) => console.error(err))
 })
 
 module.exports = router

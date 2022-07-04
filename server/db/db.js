@@ -8,7 +8,19 @@ function addCollection(collection, db = connection) {
 }
 function addStamp(post, db = connection) {
   //console.log('post add stamps', post)
-  return db('stamps').insert(post)
+
+  let catalogID = getIdOfCatalog(post.catalog)
+  let stampType = getIdOfType(post.type)
+  // console.log('tt', catalogID, stampType)
+  return db('stamps').insert({
+    name: post.name,
+    number: post.number,
+    retired: post.retired,
+    bundle: post.bundle,
+    price: post.price,
+    stamp_type_id: stampType,
+    catalog_id: catalogID,
+  })
 }
 
 function getStamps(db = connection) {
@@ -33,6 +45,12 @@ function getCatalogs(db = connection) {
 }
 function getStampTypes(db = connection) {
   return db('StampTypes').select()
+}
+function getIdOfType(name, db = connection) {
+  return db('StampTypes').select('id').where({ name })
+}
+function getIdOfCatalog(name, db = connection) {
+  return db('catalogs').select('id').where({ name })
 }
 function getCollections(db = connection) {
   return db('collections').select()
