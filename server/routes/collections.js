@@ -18,7 +18,7 @@ router.post('/add', (req, res) => {
   db.addCollection(collection)
     .then((id) => {
       res.redirect('/collections')
-      console.log('added', id)
+      //console.log('added', id)
     })
     .catch((err) => {
       console.error(err)

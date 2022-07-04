@@ -13,7 +13,7 @@ SetColName({
   }
   function handleClick(e){
     e.preventDefault() //HERE//
-    // console.log("addpage",colName)
+    //console.log("addpage",colName)
     navigate('/collections')
     postCollections(colName)
     

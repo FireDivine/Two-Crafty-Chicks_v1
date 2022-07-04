@@ -22,7 +22,7 @@ function Stamps() {
         <table className="table ">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              {/* <th scope="col">#</th> */}
               <th scope="col">Name</th>
               <th scope="col">Number</th>
               <th scope="col">Stamp Type</th>
@@ -35,12 +35,13 @@ function Stamps() {
           <tbody>
             {/* TODO  - make stamp type and Catalog into words.   */}
             {stamps.map((col) => (
+              
               <tr key={col.id}>
-                <th scope="row">{col.id}</th>
+                {/* <th scope="row">{col.id}</th> */}
                 <td>{col.name}</td>
-                <td>{col.number}</td>
-                <td>{col.stamp_type}</td>
-                <td>{col.catalog_id}</td>
+                <td>{col.Number}</td>
+                <td>{col.Type}</td>
+                <td>{col.Catalog}</td>
                 <td>
                   <input type={'checkbox'} readOnly checked={col.retired} />
                 </td>

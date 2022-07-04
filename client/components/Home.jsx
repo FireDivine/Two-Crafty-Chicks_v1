@@ -9,7 +9,7 @@ function Home() {
         <div
         onClick={()=>navigate('/stamps')}
           className="card card-cover h-100 overflow-hidden  bg-dark rounded-4 shadow-lg"
-          style={{backgroundImage: 'url(images/animal_stamp.jpg)',backgroundSize: 'cover',backgroundPosition: 'center'}}>
+          style={{backgroundImage: 'url(images/sleepingSloth.png)',backgroundSize: 'cover',backgroundPosition: 'center'}}>
           <div className="d-flex flex-column h-100 p-5 pb-3  text-shadow-1">
             <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Stamps</h2>
           </div>
