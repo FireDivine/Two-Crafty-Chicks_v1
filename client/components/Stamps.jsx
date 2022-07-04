@@ -9,6 +9,7 @@ function Stamps() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchStamps())
+    
   }, [])
   return (
     <>

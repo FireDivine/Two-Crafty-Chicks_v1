@@ -9,15 +9,21 @@ router.get('/', (req, res) => {
     .then((stamp) => res.json(stamp))
     .catch((err) => console.error(err))
 })
+router.get('/catalogs', (req, res) => {
+  db.getCatalogs()
+    .then((cat) => res.json(cat))
+    .catch((err) => console.error(err))
+})
 router.post('/add', (req, res) => {
   const stamp = req.body
-  console.log('bob', stamp)
+  //console.log('bob', stamp)
   db.addStamp(stamp)
-    .then((id) => {
-      console.log('add stamp:', stamp, id)
-      res.json(id)
-    })
-    .catch((err) => console.error(err))
+  // .then((id) => {
+  //   //console.log('add stamp:', stamp, id)
+  //   //res.json(id)
+  //   //res.redirect('/stamps')
+  // })
+  // .catch((err) => console.error(err))
 })
 
 module.exports = router
