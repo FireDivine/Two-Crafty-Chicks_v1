@@ -28,7 +28,8 @@ function getStamps(db = connection) {
     )
 }
 function addStamp(post, db = connection) {
-  return db('stamps').insert()
+  //console.log('post add stamps', post)
+  return db('stamps').insert(post)
 }
 
 module.exports = {

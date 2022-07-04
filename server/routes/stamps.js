@@ -10,9 +10,11 @@ router.get('/', (req, res) => {
     .catch((err) => console.error(err))
 })
 router.post('/add', (req, res) => {
-  const stamp = res.body
+  const stamp = req.body
+  console.log('bob', stamp)
   db.addStamp(stamp)
     .then((id) => {
+      console.log('add stamp:', stamp, id)
       res.json(id)
     })
     .catch((err) => console.error(err))
