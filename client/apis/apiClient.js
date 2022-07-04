@@ -20,7 +20,18 @@ export function getAllCatalogs() {
   return request
     .get('/v1/stamps/catalogs')
     .then((res) => {
-      console.log(res.body)
+      // console.log(res.body)
+      return res.body
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+}
+export function getAllTypes() {
+  return request
+    .get('/v1/stamps/types')
+    .then((res) => {
+      //  console.log(res.body)
       return res.body
     })
     .catch((err) => {
@@ -41,7 +52,7 @@ export function postStamps(stamps) {
     .post('/v1/stamps/add')
     .send(stamps)
     .then((res) => {
-      console.log('postapi: ', res.body, stamps)
+      //console.log('postapi: ', res.body, stamps)
       return res.body
     })
 }

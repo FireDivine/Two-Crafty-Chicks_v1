@@ -1,4 +1,4 @@
-import { getAllCatalogs, getAllStamps } from '../apis/apiClient'
+import { getAllCatalogs, getAllStamps, getAllTypes } from '../apis/apiClient'
 
 export const SET_STAMPS = 'SET_STAMPS'
 export const ADD_STAMPS = 'ADD_STAMPS'
@@ -12,7 +12,7 @@ export function setStamp(stamp) {
   }
 }
 export function setCatalog(cats) {
-  console.log('cats', cats)
+  //console.log('cats', cats)
   return { type: SET_CATS, payload: cats }
 }
 export function setSType(t) {
@@ -47,8 +47,17 @@ export function fetchStamps() {
 export function fetchCatalogs() {
   return (dispatch) => {
     return getAllCatalogs().then((cat) => {
-      console.log('fetch', cat)
+      // console.log('fetch', cat)
       dispatch(setCatalog(cat))
+      return null
+    })
+  }
+}
+export function fetchSTypes() {
+  return (dispatch) => {
+    return getAllTypes().then((cat) => {
+      //  console.log('fetch', cat)
+      dispatch(setSType(cat))
       return null
     })
   }

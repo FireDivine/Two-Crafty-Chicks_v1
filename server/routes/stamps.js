@@ -14,6 +14,11 @@ router.get('/catalogs', (req, res) => {
     .then((cat) => res.json(cat))
     .catch((err) => console.error(err))
 })
+router.get('/types', (req, res) => {
+  db.getStampTypes()
+    .then((t) => res.json(t))
+    .catch((err) => console.error(err))
+})
 router.post('/add', (req, res) => {
   const stamp = req.body
   //console.log('bob', stamp)
