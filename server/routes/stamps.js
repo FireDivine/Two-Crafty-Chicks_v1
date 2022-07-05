@@ -34,7 +34,7 @@ router.post('/add', (req, res) => {
   db.addStamp(stamp)
     .then((id) => {
       //   //console.log('add stamp:', stamp, id)
-      //   //res.json(id)
+      res.json(id)
       //   //res.redirect('/stamps')
     })
     .catch((err) => console.error(err))
@@ -42,11 +42,12 @@ router.post('/add', (req, res) => {
 router.patch('/:id', (req, res) => {
   const id = req.params.id
   const stamp = req.body
-  console.log('stamp', stamp)
-  console.log(id)
-  db.updateStamp(id, stamp)
+  console.log('stamp route', req.params.id, stamp)
+  console.log('id:', id)
+  db.updateStamp(stamp.id, stamp)
     .then((st) => {
-      res.json(st)
+      console.log('then')
+      return res.json(st)
     })
     .catch((err) => console.error(err))
 })

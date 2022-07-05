@@ -23,14 +23,14 @@ function addStamp(post, db = connection) {
   })
 }
 function updateStamp(id, stamp, db = connection) {
-  console.log('tt', stamp.Type)
+  console.log('db file: ', stamp)
   let catalogID = getIdOfCatalog(stamp.Catalog)
   let stampType = getIdOfType(stamp.Type)
 
   return db('stamps')
     .update({
       name: stamp.name,
-      number: stamp.number,
+      Number: stamp.number,
       retired: stamp.retired,
       bundle: stamp.bundle,
       price: stamp.price,

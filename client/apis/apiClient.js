@@ -67,3 +67,12 @@ export function postStamps(stamps) {
       return res.body
     })
 }
+export function updateStamp(id, stamp) {
+  return request
+    .patch('/v1/stamps/' + id)
+    .send(stamp)
+    .then((res) => {
+      console.log('api update:', res.body, id, stamp)
+      return res.body
+    })
+}

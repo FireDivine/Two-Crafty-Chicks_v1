@@ -30,7 +30,7 @@ function Stamps() {
               <th scope="col">Catalog</th>
               <th scope="col">Retired</th>
               <th scope="col">Bundle</th>
-              <th scope="col">Price</th>
+              <th scope="col">Price(NZD)</th>
             </tr>
           </thead>
           <tbody>
@@ -49,7 +49,7 @@ function Stamps() {
                 <td>
                   <input type={'checkbox'} readOnly checked={col.bundle} />
                 </td>
-                <td>{col.price}</td>
+                <td>${col.price}</td>
 
                 <td>
                   <Link className=" inpop" to={`/stamps/${col.id}`}>
