@@ -11,12 +11,7 @@ function Stamps() {
     dispatch(fetchStamps())
     
   }, [stamps])
-function handleDelete(id){
-  //call api
-  deleteStamp(id)
-  
-  
-}
+
 
   return (
     <>
@@ -63,7 +58,7 @@ function handleDelete(id){
                     <button className="btn btn-info inpop">Edit</button>
                   </Link>
                 </td>
-                <td>  <button onClick={()=>{handleDelete(col.id)}} className="btn btn-outline-info form-control inpop ">
+                <td>  <button onClick={()=>{deleteStamp(col.id)}} className="btn btn-outline-info form-control inpop ">
               Delete
             </button></td>
               </tr>
