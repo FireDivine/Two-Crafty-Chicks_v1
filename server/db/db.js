@@ -38,6 +38,22 @@ function getStamps(db = connection) {
       'stamps.price'
     )
 }
+function getStampByID(id, db = connection) {
+  return db('stamps')
+    .join('stampTypes', 'stamps.stamp_type_id', 'stampTypes.id')
+    .join('catalogs', 'stamps.catalog_id', 'catalogs.id')
+    .where('stamps.id', id)
+    .select(
+      'stamps.id',
+      'stamps.name',
+      'stamps.number as Number',
+      'stampTypes.name as Type',
+      'catalogs.name as Catalog',
+      'stamps.retired',
+      'stamps.bundle',
+      'stamps.price'
+    )
+}
 
 // Enums tables
 function getCatalogs(db = connection) {
@@ -63,4 +79,5 @@ module.exports = {
   getStampTypes,
   addStamp,
   addCollection,
+  getStampByID,
 }

@@ -19,6 +19,15 @@ router.get('/types', (req, res) => {
     .then((t) => res.json(t))
     .catch((err) => console.error(err))
 })
+router.get('/:id', (req, res) => {
+  const id = req.params.id
+  //console.log(id)
+  db.getStampByID(id)
+    .then((st) => {
+      res.json(st)
+    })
+    .catch((err) => console.error(err))
+})
 router.post('/add', (req, res) => {
   const stamp = req.body
   console.log('bob', stamp)
