@@ -36,13 +36,13 @@ function EditStamps() {
     e.preventDefault()
     navigate('/stamps')
     updateStamp(id, newStamp)
-    console.log(newStamp)
+   // console.log(newStamp)
   }
   function handleChange(e) {
-    console.log('updated stamp: ', {
-      ...newStamp,
-      [e.target.name]: e.target.value,
-    })
+   // console.log('updated stamp: ', {
+    //   ...newStamp,
+    //   [e.target.name]: e.target.value,
+    // })
     SetNewStamp({ ...newStamp, [e.target.name]: e.target.value })
   }
 

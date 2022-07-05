@@ -25,7 +25,7 @@ function AddStamps() {
     e.preventDefault()
     navigate('/stamps')
     postStamps(newStamp)
-    console.log(newStamp)
+   // console.log(newStamp)
   }
   function handleChange(e) {
     SetNewStamp({ ...newStamp, [e.target.name]: e.target.value })

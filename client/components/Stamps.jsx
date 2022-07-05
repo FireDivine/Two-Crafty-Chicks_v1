@@ -56,17 +56,14 @@ function handleDelete(id){
                 <td>
                   <input type={'checkbox'} readOnly checked={col.bundle} />
                 </td>
-                <td>${col.price}</td>
+                <td>${(col.price).toFixed(2)}</td>
 
                 <td>
                   <Link className=" inpop" to={`/stamps/${col.id}`}>
                     <button className="btn btn-info inpop">Edit</button>
                   </Link>
                 </td>
-                <td>  <button onClick={()=>{handleDelete(col.id)
-                //   deleteStamp(col.id)
-                //  navigate('/stamps')
-                }} className="btn btn-outline-info form-control inpop ">
+                <td>  <button onClick={()=>{handleDelete(col.id)}} className="btn btn-outline-info form-control inpop ">
               Delete
             </button></td>
               </tr>

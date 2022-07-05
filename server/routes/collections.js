@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   db.getCollections()
     .then((col) => res.json(col))
     .catch((err) => {
-      console.error(err)
+      //console.error(err)
       res.status(500).send('Server error')
     })
 })
@@ -21,7 +21,7 @@ router.post('/add', (req, res) => {
       //console.log('added', id)
     })
     .catch((err) => {
-      console.error(err)
+      //console.error(err)
       res.status(500).send('Server error')
     })
 })
