@@ -8,7 +8,8 @@ import Stamps from './Stamps'
 import Collections from './Collections'
 import EditCollections from './EditCollections'
 import EditStamps from './EditStamps'
-
+import AddCollections from './AddCollections'
+import AddStamps from './AddStamps'
 function App () {
 
   return (
@@ -22,10 +23,10 @@ function App () {
        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stamps" element={<Stamps />} />
-          {/* <Route path="/stamps/add" element={<AddStamps />} /> */}
+          <Route path="/stamps/add" element={<AddStamps />} />
           <Route path="/stamps/:id" element={<EditStamps />} />
           <Route path="/collections" element={<Collections />} />
-          {/* <Route path="/collections/add" element={<AddCollections />} /> */}
+          <Route path="/collections/add" element={<AddCollections />} />
           <Route path='/collections/:id' element={<EditCollections/>}/>
            {/* <Route path='/continent/:name/:code' element={<Country />}/> */}
         </Routes> 

@@ -7,7 +7,7 @@ exports.up = function (knex) {
     table.increments('id').primary()
     table.string('name')
     table.integer('number')
-    table.integer('stamp_type').references('stampTypes.id')
+    table.integer('stamp_type_id').references('stampTypes.id')
     table.integer('catalog_id').references('catalogs.id')
     table.boolean('retired')
     table.boolean('bundle')
