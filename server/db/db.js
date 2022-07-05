@@ -22,7 +22,23 @@ function addStamp(post, db = connection) {
     catalog_id: catalogID,
   })
 }
+function updateStamp(id, stamp, db = connection) {
+  console.log('tt', stamp.Type)
+  let catalogID = getIdOfCatalog(stamp.Catalog)
+  let stampType = getIdOfType(stamp.Type)
 
+  return db('stamps')
+    .update({
+      name: stamp.name,
+      number: stamp.number,
+      retired: stamp.retired,
+      bundle: stamp.bundle,
+      price: stamp.price,
+      stamp_type_id: stampType,
+      catalog_id: catalogID,
+    })
+    .where({ id })
+}
 function getStamps(db = connection) {
   return db('stamps')
     .join('stampTypes', 'stamps.stamp_type_id', 'stampTypes.id')
@@ -80,4 +96,5 @@ module.exports = {
   addStamp,
   addCollection,
   getStampByID,
+  updateStamp,
 }

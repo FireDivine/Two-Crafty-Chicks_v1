@@ -56,7 +56,7 @@ function handleChange(e){
           <label className="pt-3" htmlFor="type">
             Type of Stamp
           </label>
-          <select onClick={handleChange} className="form-select" type="text" name="type" id="type">
+          <select onChange={handleChange} className="form-select" type="text" name="type" id="type">
             {Stypes.map((t) => (
               <option key={t.id} className="form-control">
                 {t.name}

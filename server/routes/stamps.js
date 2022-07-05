@@ -39,5 +39,15 @@ router.post('/add', (req, res) => {
     })
     .catch((err) => console.error(err))
 })
-
+router.patch('/:id', (req, res) => {
+  const id = req.params.id
+  const stamp = req.body
+  console.log('stamp', stamp)
+  console.log(id)
+  db.updateStamp(id, stamp)
+    .then((st) => {
+      res.json(st)
+    })
+    .catch((err) => console.error(err))
+})
 module.exports = router

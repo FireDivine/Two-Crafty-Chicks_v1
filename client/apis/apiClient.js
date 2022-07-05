@@ -16,6 +16,17 @@ export function getAllStamps() {
       console.error(err)
     })
 }
+export function getStamp(id) {
+  return request
+    .get('/v1/stamps/' + id)
+    .then((res) => {
+      // console.log(res.body[0])
+      return res.body[0]
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+}
 export function getAllCatalogs() {
   return request
     .get('/v1/stamps/catalogs')
