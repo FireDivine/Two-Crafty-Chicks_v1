@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchStamps } from '../actions/stamps'
-
+import {deleteStamp} from '../apis/apiClient'
 function Stamps() {
   const stamps = useSelector((state) => state.stamps)
   // console.log(stamps)
@@ -10,7 +10,14 @@ function Stamps() {
   useEffect(() => {
     dispatch(fetchStamps())
     
-  }, [])
+  }, [stamps])
+function handleDelete(id){
+  //call api
+  deleteStamp(id)
+  
+  
+}
+
   return (
     <>
       <h2 className="text-center"> -- Stamps --</h2>
@@ -20,7 +27,7 @@ function Stamps() {
         </Link>
       </div>
       <div className="container mr-3 w-75 d-flex justify-content-center">
-        <table className="table ">
+        <table className="table">
           <thead>
             <tr>
               {/* <th scope="col">#</th> */}
@@ -30,7 +37,7 @@ function Stamps() {
               <th scope="col">Catalog</th>
               <th scope="col">Retired</th>
               <th scope="col">Bundle</th>
-              <th scope="col">Price</th>
+              <th scope="col">Price(NZD)</th>
             </tr>
           </thead>
           <tbody>
@@ -49,13 +56,19 @@ function Stamps() {
                 <td>
                   <input type={'checkbox'} readOnly checked={col.bundle} />
                 </td>
-                <td>{col.price}</td>
+                <td>${col.price}</td>
 
                 <td>
                   <Link className=" inpop" to={`/stamps/${col.id}`}>
                     <button className="btn btn-info inpop">Edit</button>
                   </Link>
                 </td>
+                <td>  <button onClick={()=>{handleDelete(col.id)
+                //   deleteStamp(col.id)
+                //  navigate('/stamps')
+                }} className="btn btn-outline-info form-control inpop ">
+              Delete
+            </button></td>
               </tr>
             ))}
           </tbody>

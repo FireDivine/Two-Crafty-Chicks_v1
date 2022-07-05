@@ -16,6 +16,17 @@ export function getAllStamps() {
       console.error(err)
     })
 }
+export function getStamp(id) {
+  return request
+    .get('/v1/stamps/' + id)
+    .then((res) => {
+      // console.log(res.body[0])
+      return res.body[0]
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+}
 export function getAllCatalogs() {
   return request
     .get('/v1/stamps/catalogs')
@@ -55,4 +66,16 @@ export function postStamps(stamps) {
       //console.log('postapi: ', res.body, stamps)
       return res.body
     })
+}
+export function updateStamp(id, stamp) {
+  return request
+    .patch('/v1/stamps/update/' + id)
+    .send(stamp)
+    .then((res) => {
+      console.log('api update:', res.body, id, stamp)
+      return res.body
+    })
+}
+export function deleteStamp(id) {
+  return request.del('/v1/stamps/delete/' + id).then((res) => res.body)
 }

@@ -22,7 +22,23 @@ function addStamp(post, db = connection) {
     catalog_id: catalogID,
   })
 }
+function updateStamp(id, stamp, db = connection) {
+  console.log('db file: ', stamp)
+  let catalogID = getIdOfCatalog(stamp.Catalog)
+  let stampType = getIdOfType(stamp.Type)
 
+  return db('stamps')
+    .update({
+      name: stamp.name,
+      Number: stamp.number,
+      retired: stamp.retired,
+      bundle: stamp.bundle,
+      price: stamp.price,
+      stamp_type_id: stampType,
+      catalog_id: catalogID,
+    })
+    .where({ id })
+}
 function getStamps(db = connection) {
   return db('stamps')
     .join('stampTypes', 'stamps.stamp_type_id', 'stampTypes.id')
@@ -37,6 +53,25 @@ function getStamps(db = connection) {
       'stamps.bundle',
       'stamps.price'
     )
+}
+function getStampByID(id, db = connection) {
+  return db('stamps')
+    .join('stampTypes', 'stamps.stamp_type_id', 'stampTypes.id')
+    .join('catalogs', 'stamps.catalog_id', 'catalogs.id')
+    .where('stamps.id', id)
+    .select(
+      'stamps.id',
+      'stamps.name',
+      'stamps.number as Number',
+      'stampTypes.name as Type',
+      'catalogs.name as Catalog',
+      'stamps.retired',
+      'stamps.bundle',
+      'stamps.price'
+    )
+}
+function delStamp(id, db = connection) {
+  return db('stamps').del().where({ id })
 }
 
 // Enums tables
@@ -57,10 +92,13 @@ function getCollections(db = connection) {
 }
 
 module.exports = {
-  getCollections,
-  getStamps,
   getCatalogs,
   getStampTypes,
-  addStamp,
+  getCollections,
   addCollection,
+  getStamps,
+  addStamp,
+  getStampByID,
+  updateStamp,
+  delStamp,
 }

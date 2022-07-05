@@ -27,7 +27,7 @@ function App () {
           <Route path="/stamps/:id" element={<EditStamps />} />
           <Route path="/collections" element={<Collections />} />
           <Route path="/collections/add" element={<AddCollections />} />
-          <Route path='/collections/:id' element={<EditCollections/>}/>
+          {/* <Route path='/collections/:id' element={<EditCollections/>}/> */}
            {/* <Route path='/continent/:name/:code' element={<Country />}/> */}
         </Routes> 
         </div>

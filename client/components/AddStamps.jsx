@@ -8,8 +8,7 @@ import { postStamps } from '../apis/apiClient'
 function AddStamps() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-const [newStamp, SetNewStamp] = useState({})
-
+  const [newStamp, SetNewStamp] = useState({})
 
   const catalog = useSelector((state) => state.CatalogReducer)
   //console.log("C: ",catalog)
@@ -22,31 +21,36 @@ const [newStamp, SetNewStamp] = useState({})
     dispatch(fetchSTypes())
   }, [])
 
-function handleSubmit(e){
-  e.preventDefault()
-  navigate('/stamps')
-  postStamps(newStamp)
-  console.log(newStamp)
-
-}
-function handleChange(e){
-  SetNewStamp({...newStamp,[e.target.name]:e.target.value})
-}
+  function handleSubmit(e) {
+    e.preventDefault()
+    navigate('/stamps')
+    postStamps(newStamp)
+    console.log(newStamp)
+  }
+  function handleChange(e) {
+    SetNewStamp({ ...newStamp, [e.target.name]: e.target.value })
+  }
 
   return (
     <div className="container  col-xxl-8 px-4 py-5 w-50">
-      <h2 className='text-center'>-- Add New Stamp --</h2>
+      <h2 className="text-center">-- Add New Stamp --</h2>
       <div className="row flex-lg-row align-items-center g-5 py-5">
         <form onSubmit={handleSubmit} action="/v1/stamps/add" method="post">
           <label className="pt-3" htmlFor="name">
             Name of New Stamp
           </label>
-          <input onChange={handleChange} className="form-control" type="text" name="name" id="name" />
+          <input
+            onChange={handleChange}
+            className="form-control"
+            type="text"
+            name="name"
+            id="name"
+          />
           <label className="pt-3" htmlFor="number">
             Number of New Stamp
           </label>
           <input
-          onChange={handleChange}
+            onChange={handleChange}
             className="form-control"
             type="text"
             name="number"
@@ -56,7 +60,14 @@ function handleChange(e){
           <label className="pt-3" htmlFor="type">
             Type of Stamp
           </label>
-          <select onClick={handleChange} className="form-select" type="text" name="type" id="type">
+          <select
+            onChange={handleChange}
+            className="form-select"
+            type="text"
+            name="type"
+            id="type"
+            defaultValue={"Clear"}
+          >
             {Stypes.map((t) => (
               <option key={t.id} className="form-control">
                 {t.name}
@@ -68,12 +79,13 @@ function handleChange(e){
             Catalog
           </label>
           <select
-          onChange={handleChange}
+            onChange={handleChange}
             className="form-select "
             type="text"
             name="catalog"
             id="catalog"
-            value= {newStamp.catalog}
+            defaultValue={'OC'}
+            value={newStamp.catalog}
           >
             {catalog.map((pop) => (
               <option key={pop.id} className="form-control">
@@ -82,12 +94,11 @@ function handleChange(e){
             ))}
           </select>
           <div className="form-check  pt-3 ">
-        
             <label className="form-check-label" htmlFor="type">
               is Stamp Retired?
             </label>
             <input
-            onChange={handleChange}
+              onChange={handleChange}
               className="form-check-input"
               type="checkbox"
               name="retired"
@@ -99,7 +110,7 @@ function handleChange(e){
               is Stamp in a Bundle?
             </label>
             <input
-            onChange={handleChange}
+              onChange={handleChange}
               className="form-check-input"
               type="checkbox"
               name="bundle"
@@ -109,14 +120,19 @@ function handleChange(e){
           <label className="pt-3" htmlFor="price">
             Price(NZD) of Stamp
           </label>
-          <input onChange={handleChange} className="form-control" type="number" name="price" id="price" />
+          <input
+            onChange={handleChange}
+            className="form-control"
+            type="number"
+            name="price"
+            id="price"
+            step="0.01"
+          />
 
           <div className="pt-3">
-            <button
-              
-              className="btn btn-outline-info form-control pop"
-              
-            >Submit new Stamp</button>
+            <button className="btn btn-outline-info form-control pop">
+              Submit new Stamp
+            </button>
           </div>
         </form>
       </div>
