@@ -3,25 +3,24 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { fetchCatalogs, fetchSTypes } from '../actions/stamps'
-import { postStamps,getStamp, updateStamp } from '../apis/apiClient'
+import { getStamp, updateStamp } from '../apis/apiClient'
 
 function EditStamps() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [newStamp, SetNewStamp] = useState({})
-//const [stampID, setStampID] = useState({})
-let id = useParams()
-console.log(id.id)
-useEffect(()=>{
-  
-getStamp(id.id)
-.then(ss=>{
-   console.log("ss",ss)
- return SetNewStamp(ss)}
-)
-.catch(err=>console.error(err))
-},[])  
-//console.log(stampID)
+  //const [stampID, setStampID] = useState({})
+  let { id } = useParams()
+  console.log(id)
+  useEffect(() => {
+    getStamp(id)
+      .then((ss) => {
+        console.log('ss', ss)
+        return SetNewStamp(ss)
+      })
+      .catch((err) => console.error(err))
+  }, [])
+  //console.log(stampID)
   const catalog = useSelector((state) => state.CatalogReducer)
   //console.log("C: ",catalog)
   useEffect(() => {
@@ -36,11 +35,14 @@ getStamp(id.id)
   function handleEdit(e) {
     e.preventDefault()
     navigate('/stamps')
-    updateStamp(id,newStamp)
+    updateStamp(id, newStamp)
     console.log(newStamp)
   }
   function handleChange(e) {
-    console.log("updated stamp: ",{ ...newStamp, [e.target.name]: e.target.value })
+    console.log('updated stamp: ', {
+      ...newStamp,
+      [e.target.name]: e.target.value,
+    })
     SetNewStamp({ ...newStamp, [e.target.name]: e.target.value })
   }
 
@@ -71,7 +73,7 @@ getStamp(id.id)
             id="number"
             defaultValue={newStamp.Number}
           />
-{/* Drop Downs */}
+          {/* Drop Downs */}
           <label className="pt-3" htmlFor="type">
             Type of Stamp
           </label>
@@ -149,12 +151,12 @@ getStamp(id.id)
           />
 
           <div className="pt-3">
-            <button className="btn btn-outline-info form-control pop" value={id} >
+            <button
+              className="btn btn-outline-info form-control pop"
+              value={id}
+            >
               Edit Stamp
             </button>
-            {/* <button className="btn btn-outline-info form-control inpop mt-2" value={id}>
-              Delete Stamp
-            </button> */}
           </div>
         </form>
       </div>

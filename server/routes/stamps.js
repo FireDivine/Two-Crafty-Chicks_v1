@@ -39,7 +39,7 @@ router.post('/add', (req, res) => {
     })
     .catch((err) => console.error(err))
 })
-router.patch('/:id', (req, res) => {
+router.patch('/update/:id', (req, res) => {
   const id = req.params.id
   const stamp = req.body
   console.log('stamp route', req.params.id, stamp)
@@ -51,4 +51,12 @@ router.patch('/:id', (req, res) => {
     })
     .catch((err) => console.error(err))
 })
+router.delete('/delete/:id', (req, res) => {
+  const id = req.params.id
+  console.log('delete', id)
+  db.delStamp(id)
+    .then((del) => res.json(del))
+    .catch((err) => res.status(500).send(err))
+})
+
 module.exports = router

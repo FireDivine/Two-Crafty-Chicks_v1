@@ -19,6 +19,7 @@ const stampsReducer = (state = initialState, action) => {
           price: action.payload.price,
         },
       ]
+
     default:
       return state
   }

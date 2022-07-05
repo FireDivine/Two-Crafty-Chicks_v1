@@ -5,10 +5,10 @@ export const ADD_STAMPS = 'ADD_STAMPS'
 export const SET_CATS = 'SET_CATS'
 export const SET_SType = 'SET_SType'
 
-export function setStamp(stamp) {
+export function setStamps(stamps) {
   return {
     type: SET_STAMPS,
-    payload: stamp,
+    payload: stamps,
   }
 }
 export function setCatalog(cats) {
@@ -39,7 +39,7 @@ export function postStamp(stamp) {
 export function fetchStamps() {
   return (dispatch) => {
     return getAllStamps().then((stamp) => {
-      dispatch(setStamp(stamp))
+      dispatch(setStamps(stamp))
       return null
     })
   }

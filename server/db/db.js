@@ -70,6 +70,9 @@ function getStampByID(id, db = connection) {
       'stamps.price'
     )
 }
+function delStamp(id, db = connection) {
+  return db('stamps').del().where({ id })
+}
 
 // Enums tables
 function getCatalogs(db = connection) {
@@ -89,12 +92,13 @@ function getCollections(db = connection) {
 }
 
 module.exports = {
-  getCollections,
-  getStamps,
   getCatalogs,
   getStampTypes,
-  addStamp,
+  getCollections,
   addCollection,
+  getStamps,
+  addStamp,
   getStampByID,
   updateStamp,
+  delStamp,
 }
