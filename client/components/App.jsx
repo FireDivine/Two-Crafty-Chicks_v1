@@ -11,15 +11,12 @@ import EditStamps from './EditStamps'
 import AddCollections from './AddCollections'
 import AddStamps from './AddStamps'
 function App () {
-
   return (
     <>
       <div className='container'>
        <Header />
        </div>
-       <div className=' m-2'>
-        
-     
+       <div className=' m-2'>   
        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stamps" element={<Stamps />} />

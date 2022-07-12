@@ -58,9 +58,9 @@ function Stamps() {
                     <button className="btn btn-info inpop">Edit</button>
                   </Link>
                 </td>
-                <td>  <button onClick={()=>{deleteStamp(col.id)}} className="btn btn-outline-info form-control inpop ">
+                <td> <strong> <button onClick={()=>{deleteStamp(col.id)}} className="btn btn-outline-info form-control inpop ">
               Delete
-            </button></td>
+            </button></strong></td>
               </tr>
             ))}
           </tbody>

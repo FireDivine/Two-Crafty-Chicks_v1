@@ -30,7 +30,6 @@ function AddStamps() {
   function handleChange(e) {
     SetNewStamp({ ...newStamp, [e.target.name]: e.target.value })
   }
-
   return (
     <div className="container  col-xxl-8 px-4 py-5 w-50">
       <h2 className="text-center">-- Add New Stamp --</h2>
@@ -56,7 +55,6 @@ function AddStamps() {
             name="number"
             id="number"
           />
-
           <label className="pt-3" htmlFor="type">
             Type of Stamp
           </label>
@@ -74,7 +72,6 @@ function AddStamps() {
               </option>
             ))}
           </select>
-
           <label className="pt-3" htmlFor="catalog">
             Catalog
           </label>
@@ -86,6 +83,7 @@ function AddStamps() {
             id="catalog"
             defaultValue={'OC'}
             value={newStamp.catalog}
+            
           >
             {catalog.map((pop) => (
               <option key={pop.id} className="form-control">
@@ -128,7 +126,6 @@ function AddStamps() {
             id="price"
             step="0.01"
           />
-
           <div className="pt-3">
             <button className="btn btn-outline-info form-control pop">
               Submit new Stamp

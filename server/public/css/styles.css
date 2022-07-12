@@ -38,20 +38,24 @@ img{
 
 /* Buttons */
 .pop{
+  font-family: 'Josefin Slab', serif;
  border-color: lightcoral;
  color: lightcoral;
 }
 .inpop{
+  font-family: 'Josefin Slab', serif;
   background-color: lightcoral;
   border-color: darkslateblue;
   color: darkslateblue;
 }
 .inpop:hover{
+  font-family: 'Josefin Slab', serif;
   background-color: darkslateblue;
    border-color: lightcoral;
  color: lightcoral;
 }
 .pop:hover{
+  font-family: 'Josefin Slab', serif;
   background-color: lightcoral;
   border-color: darkslateblue;
   color: darkslateblue;
