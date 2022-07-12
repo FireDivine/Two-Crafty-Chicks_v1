@@ -11,7 +11,6 @@ exports.up = function (knex) {
     table.integer('collection_id').references('collections.id')
     table.string('size')
     table.boolean('retired')
-    table.boolean('bundle')
     table.boolean('series')
     table.decimal('price')
   })
