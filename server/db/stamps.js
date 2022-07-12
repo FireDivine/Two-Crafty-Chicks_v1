@@ -3,9 +3,6 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 //const connection = require('./connection')
 
-function addCollection(collection, db = connection) {
-  return db('collections').insert(collection)
-}
 function addStamp(post, db = connection) {
   //console.log('post add stamps', post)
 
@@ -87,15 +84,10 @@ function getIdOfType(name, db = connection) {
 function getIdOfCatalog(name, db = connection) {
   return db('catalogs').select('id').where({ name })
 }
-function getCollections(db = connection) {
-  return db('collections').select()
-}
 
 module.exports = {
   getCatalogs,
   getStampTypes,
-  getCollections,
-  addCollection,
   getStamps,
   addStamp,
   getStampByID,

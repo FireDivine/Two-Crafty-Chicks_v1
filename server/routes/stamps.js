@@ -1,6 +1,6 @@
 const express = require('express')
 
-const db = require('../db/db')
+const db = require('../db/stamps.js')
 
 const router = express.Router()
 // GET v1/stamps
